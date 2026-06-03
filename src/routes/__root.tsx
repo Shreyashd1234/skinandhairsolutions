@@ -57,6 +57,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Skin & Hair Solutions" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Skin & Hair Solutions — Premium Dermatology & Trichology in Belagavi" },
+      { name: "twitter:title", content: "Skin & Hair Solutions — Premium Dermatology & Trichology in Belagavi" },
+      { property: "og:description", content: "Belagavi's premium skin and hair care destination. Advanced dermatology, trichology, laser and aesthetic treatments by experienced specialists." },
+      { name: "twitter:description", content: "Belagavi's premium skin and hair care destination. Advanced dermatology, trichology, laser and aesthetic treatments by experienced specialists." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5a70531e-adf0-467e-ba73-9847f6aba990/id-preview-315e071c--226ba5ee-72f4-4cbf-b521-cc2f96461318.lovable.app-1780460955099.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5a70531e-adf0-467e-ba73-9847f6aba990/id-preview-315e071c--226ba5ee-72f4-4cbf-b521-cc2f96461318.lovable.app-1780460955099.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

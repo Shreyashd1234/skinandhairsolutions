@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SkinTreatmentsRouteImport } from './routes/skin-treatments'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PharmaRouteImport } from './routes/pharma'
+import { Route as HairTreatmentsRouteImport } from './routes/hair-treatments'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AestheticTreatmentsRouteImport } from './routes/aesthetic-treatments'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SkinTreatmentsRoute = SkinTreatmentsRouteImport.update({
+  id: '/skin-treatments',
+  path: '/skin-treatments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PharmaRoute = PharmaRouteImport.update({
+  id: '/pharma',
+  path: '/pharma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HairTreatmentsRoute = HairTreatmentsRouteImport.update({
+  id: '/hair-treatments',
+  path: '/hair-treatments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AestheticTreatmentsRoute = AestheticTreatmentsRouteImport.update({
+  id: '/aesthetic-treatments',
+  path: '/aesthetic-treatments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/aesthetic-treatments': typeof AestheticTreatmentsRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/hair-treatments': typeof HairTreatmentsRoute
+  '/pharma': typeof PharmaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/skin-treatments': typeof SkinTreatmentsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/aesthetic-treatments': typeof AestheticTreatmentsRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/hair-treatments': typeof HairTreatmentsRoute
+  '/pharma': typeof PharmaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/skin-treatments': typeof SkinTreatmentsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/aesthetic-treatments': typeof AestheticTreatmentsRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/hair-treatments': typeof HairTreatmentsRoute
+  '/pharma': typeof PharmaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/skin-treatments': typeof SkinTreatmentsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/aesthetic-treatments'
+    | '/blog'
+    | '/contact'
+    | '/gallery'
+    | '/hair-treatments'
+    | '/pharma'
+    | '/sitemap.xml'
+    | '/skin-treatments'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/aesthetic-treatments'
+    | '/blog'
+    | '/contact'
+    | '/gallery'
+    | '/hair-treatments'
+    | '/pharma'
+    | '/sitemap.xml'
+    | '/skin-treatments'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/aesthetic-treatments'
+    | '/blog'
+    | '/contact'
+    | '/gallery'
+    | '/hair-treatments'
+    | '/pharma'
+    | '/sitemap.xml'
+    | '/skin-treatments'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AestheticTreatmentsRoute: typeof AestheticTreatmentsRoute
+  BlogRoute: typeof BlogRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  HairTreatmentsRoute: typeof HairTreatmentsRoute
+  PharmaRoute: typeof PharmaRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SkinTreatmentsRoute: typeof SkinTreatmentsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/skin-treatments': {
+      id: '/skin-treatments'
+      path: '/skin-treatments'
+      fullPath: '/skin-treatments'
+      preLoaderRoute: typeof SkinTreatmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pharma': {
+      id: '/pharma'
+      path: '/pharma'
+      fullPath: '/pharma'
+      preLoaderRoute: typeof PharmaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hair-treatments': {
+      id: '/hair-treatments'
+      path: '/hair-treatments'
+      fullPath: '/hair-treatments'
+      preLoaderRoute: typeof HairTreatmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aesthetic-treatments': {
+      id: '/aesthetic-treatments'
+      path: '/aesthetic-treatments'
+      fullPath: '/aesthetic-treatments'
+      preLoaderRoute: typeof AestheticTreatmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +237,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AestheticTreatmentsRoute: AestheticTreatmentsRoute,
+  BlogRoute: BlogRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  HairTreatmentsRoute: HairTreatmentsRoute,
+  PharmaRoute: PharmaRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SkinTreatmentsRoute: SkinTreatmentsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

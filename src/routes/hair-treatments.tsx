@@ -7,7 +7,11 @@ export const Route = createFileRoute("/hair-treatments")({
   head: () => ({
     meta: [
       { title: "Hair Specialist in Belagavi — Hair Loss & PRP Treatment | SHS" },
-      { name: "description", content: "Hair fall, baldness, PRP therapy, regrowth programmes and alopecia management — trichology-led care at SHS Belagavi." },
+      {
+        name: "description",
+        content:
+          "Hair fall, baldness, PRP therapy, regrowth programmes and alopecia management — trichology-led care at SHS Belagavi.",
+      },
       { property: "og:title", content: "Hair Treatments — SHS Belagavi" },
       { property: "og:description", content: "Trichology-led hair fall and regrowth programmes." },
       { property: "og:url", content: "/hair-treatments" },
@@ -33,30 +37,54 @@ function Hair() {
     <>
       <PageHero
         eyebrow="Trichology · Belagavi"
-        title={<>Stronger hair, <em className="text-primary not-italic">restored confidence.</em></>}
+        title={
+          <>
+            Stronger hair, <em className="text-primary not-italic">restored confidence.</em>
+          </>
+        }
         lede="From your first scalp analysis to a structured regrowth journey — trichology-led care, designed around evidence and your goals."
       >
         <div className="flex flex-wrap gap-3">
-          <Link to="/contact" className="btn-primary">Book Hair Consultation</Link>
-          <a href="https://wa.me/919000000000" className="btn-outline">WhatsApp</a>
+          <Link to="/contact" className="btn-primary">
+            Book Hair Consultation
+          </Link>
+          <a href="https://wa.me/919000000000" className="btn-outline">
+            WhatsApp
+          </a>
         </div>
       </PageHero>
 
       <section className="bg-background py-24">
         <div className="container-x">
           <p className="eyebrow">Our Hair Services</p>
-          <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-5xl">Built around evidence, delivered with care.</h2>
+          <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-5xl">
+            Built around evidence, delivered with care.
+          </h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => (
-              <article key={s.t} className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl">
+              <article
+                key={s.t}
+                className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl"
+              >
                 <div className="aspect-[4/3] overflow-hidden bg-secondary">
-                  <img src={hair} alt={s.t} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <img
+                    src={hair}
+                    alt={s.t}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <span className="text-xs text-muted-foreground">0{i + 1}</span>
                   <h3 className="mt-3 font-display text-xl">{s.t}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
-                  <Link to="/contact" className="mt-6 inline-flex items-center gap-1 text-xs font-medium uppercase tracking-[0.2em] text-primary">Enquire <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></Link>
+                  <Link
+                    to="/contact"
+                    className="mt-6 inline-flex items-center gap-1 text-xs font-medium uppercase tracking-[0.2em] text-primary"
+                  >
+                    Enquire{" "}
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </Link>
                 </div>
               </article>
             ))}

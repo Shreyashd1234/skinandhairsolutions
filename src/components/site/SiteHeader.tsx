@@ -34,10 +34,18 @@ export function SiteHeader() {
     >
       <div className="container-x flex items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-3" aria-label="Skin & Hair Solutions home">
-          <img src={logoAsset.url} alt="SHS" className="h-10 w-auto md:h-11" width={44} height={44} />
+          <img
+            src={logoAsset.url}
+            alt="SHS"
+            className="h-10 w-auto md:h-11"
+            width={44}
+            height={44}
+          />
           <span className="hidden flex-col leading-tight md:flex">
             <span className="font-display text-base text-primary">Skin & Hair Solutions</span>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Belagavi</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+              Belagavi
+            </span>
           </span>
         </Link>
 
@@ -55,7 +63,9 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link to="/contact" className="btn-primary">Book Appointment</Link>
+          <Link to="/contact" className="btn-primary">
+            Book Appointment
+          </Link>
         </div>
 
         <button

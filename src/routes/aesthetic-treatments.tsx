@@ -6,9 +6,16 @@ export const Route = createFileRoute("/aesthetic-treatments")({
   head: () => ({
     meta: [
       { title: "Aesthetic Treatments — Laser, Anti-Aging, Hydrafacial | SHS Belagavi" },
-      { name: "description", content: "Laser hair reduction, anti-aging, skin tightening, chemical peels and Hydrafacial at Belagavi's premium aesthetic clinic." },
+      {
+        name: "description",
+        content:
+          "Laser hair reduction, anti-aging, skin tightening, chemical peels and Hydrafacial at Belagavi's premium aesthetic clinic.",
+      },
       { property: "og:title", content: "Aesthetic Treatments — SHS Belagavi" },
-      { property: "og:description", content: "Advanced aesthetic medicine — laser, anti-aging and rejuvenation." },
+      {
+        property: "og:description",
+        content: "Advanced aesthetic medicine — laser, anti-aging and rejuvenation.",
+      },
       { property: "og:url", content: "/aesthetic-treatments" },
       { property: "og:image", content: laser },
       { name: "twitter:image", content: laser },
@@ -32,12 +39,20 @@ function Aesthetic() {
     <>
       <PageHero
         eyebrow="Aesthetic Medicine"
-        title={<>Refined results. <em className="text-primary not-italic">Never overdone.</em></>}
+        title={
+          <>
+            Refined results. <em className="text-primary not-italic">Never overdone.</em>
+          </>
+        }
         lede="Aesthetic medicine should look like nothing — just a better, brighter, more rested version of you."
       >
         <div className="flex flex-wrap gap-3">
-          <Link to="/contact" className="btn-primary">Book Consultation</Link>
-          <a href="https://wa.me/919000000000" className="btn-outline">WhatsApp</a>
+          <Link to="/contact" className="btn-primary">
+            Book Consultation
+          </Link>
+          <a href="https://wa.me/919000000000" className="btn-outline">
+            WhatsApp
+          </a>
         </div>
       </PageHero>
 
@@ -45,9 +60,17 @@ function Aesthetic() {
         <div className="container-x">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PROCEDURES.map((p, i) => (
-              <article key={p.t} className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl">
+              <article
+                key={p.t}
+                className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl"
+              >
                 <div className="aspect-[4/3] overflow-hidden bg-secondary">
-                  <img src={laser} alt={p.t} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  <img
+                    src={laser}
+                    alt={p.t}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <span className="text-xs text-muted-foreground">0{i + 1}</span>
@@ -59,7 +82,9 @@ function Aesthetic() {
           </div>
           <div className="mt-12 rounded-2xl bg-secondary p-6">
             <p className="font-display text-2xl">Safe for Indian skin.</p>
-            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Our protocols are selected and calibrated specifically for South Asian skin types.</p>
+            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+              Our protocols are selected and calibrated specifically for South Asian skin types.
+            </p>
           </div>
         </div>
       </section>

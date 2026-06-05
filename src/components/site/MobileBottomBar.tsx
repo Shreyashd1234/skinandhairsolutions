@@ -23,10 +23,7 @@ function NavTab({ to, label, icon: Icon }: NavItem) {
 
   return (
     <li>
-      <Link
-        to={to}
-        className="group flex flex-col items-center gap-0.5 py-2 px-3"
-      >
+      <Link to={to} className="group flex flex-col items-center gap-0.5 py-2 px-3">
         <span
           className={`flex h-8 w-8 items-center justify-center rounded-full transition-all duration-200 ${
             isActive ? "bg-primary/10 scale-110" : "group-active:scale-95"
@@ -60,8 +57,7 @@ function PrimaryTab({ to, label, icon: Icon }: NavItem) {
         className="flex h-14 w-14 flex-col items-center justify-center rounded-full transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         style={{
           background: "var(--burgundy)",
-          boxShadow:
-            "0 8px 32px -6px color-mix(in oklab, var(--burgundy) 60%, transparent)",
+          boxShadow: "0 8px 32px -6px color-mix(in oklab, var(--burgundy) 60%, transparent)",
         }}
       >
         <Icon className="h-5 w-5 text-white" strokeWidth={1.8} />
@@ -75,10 +71,7 @@ function PrimaryTab({ to, label, icon: Icon }: NavItem) {
 
 export function MobileBottomBar() {
   return (
-    <nav
-      aria-label="Mobile bottom navigation"
-      className="fixed inset-x-0 bottom-0 z-50 lg:hidden"
-    >
+    <nav aria-label="Mobile bottom navigation" className="fixed inset-x-0 bottom-0 z-50 lg:hidden">
       <div
         className="border-t border-foreground/8 px-2"
         style={{
@@ -94,7 +87,7 @@ export function MobileBottomBar() {
               <PrimaryTab key={item.to} {...item} />
             ) : (
               <NavTab key={item.to} {...item} />
-            )
+            ),
           )}
         </ul>
       </div>

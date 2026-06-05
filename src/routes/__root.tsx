@@ -24,7 +24,9 @@ function NotFoundComponent() {
         <p className="eyebrow justify-center">Not found</p>
         <h1 className="mt-4 font-display text-7xl text-primary">404</h1>
         <p className="mt-3 text-muted-foreground">The page you're looking for doesn't exist.</p>
-        <Link to="/" className="btn-primary mt-8">Return home</Link>
+        <Link to="/" className="btn-primary mt-8">
+          Return home
+        </Link>
       </div>
     </div>
   );
@@ -32,15 +34,27 @@ function NotFoundComponent() {
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
-  useEffect(() => { reportLovableError(error, { boundary: "tanstack_root_error_component" }); }, [error]);
+  useEffect(() => {
+    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+  }, [error]);
   return (
     <div className="flex min-h-dvh items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="font-display text-3xl">Something went wrong</h1>
         <p className="mt-2 text-sm text-muted-foreground">Please refresh or try again.</p>
         <div className="mt-6 flex justify-center gap-2">
-          <button onClick={() => { router.invalidate(); reset(); }} className="btn-primary">Try again</button>
-          <a href="/" className="btn-outline">Go home</a>
+          <button
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
+            className="btn-primary"
+          >
+            Try again
+          </button>
+          <a href="/" className="btn-outline">
+            Go home
+          </a>
         </div>
       </div>
     </div>
@@ -53,24 +67,53 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Skin & Hair Solutions — Premium Dermatology & Trichology in Belagavi" },
-      { name: "description", content: "Belagavi's premium skin and hair care destination. Advanced dermatology, trichology, laser and aesthetic treatments by experienced specialists." },
+      {
+        name: "description",
+        content:
+          "Belagavi's premium skin and hair care destination. Advanced dermatology, trichology, laser and aesthetic treatments by experienced specialists.",
+      },
       { name: "author", content: "Skin & Hair Solutions" },
       { name: "theme-color", content: "#8A0D4E" },
       { property: "og:site_name", content: "Skin & Hair Solutions" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Skin & Hair Solutions — Premium Dermatology & Trichology in Belagavi" },
-      { name: "twitter:title", content: "Skin & Hair Solutions — Premium Dermatology & Trichology in Belagavi" },
-      { property: "og:description", content: "Belagavi's premium skin and hair care destination. Advanced dermatology, trichology, laser and aesthetic treatments by experienced specialists." },
-      { name: "twitter:description", content: "Belagavi's premium skin and hair care destination. Advanced dermatology, trichology, laser and aesthetic treatments by experienced specialists." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5a70531e-adf0-467e-ba73-9847f6aba990/id-preview-315e071c--226ba5ee-72f4-4cbf-b521-cc2f96461318.lovable.app-1780460955099.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5a70531e-adf0-467e-ba73-9847f6aba990/id-preview-315e071c--226ba5ee-72f4-4cbf-b521-cc2f96461318.lovable.app-1780460955099.png" },
+      {
+        property: "og:title",
+        content: "Skin & Hair Solutions — Premium Dermatology & Trichology in Belagavi",
+      },
+      {
+        name: "twitter:title",
+        content: "Skin & Hair Solutions — Premium Dermatology & Trichology in Belagavi",
+      },
+      {
+        property: "og:description",
+        content:
+          "Belagavi's premium skin and hair care destination. Advanced dermatology, trichology, laser and aesthetic treatments by experienced specialists.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Belagavi's premium skin and hair care destination. Advanced dermatology, trichology, laser and aesthetic treatments by experienced specialists.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5a70531e-adf0-467e-ba73-9847f6aba990/id-preview-315e071c--226ba5ee-72f4-4cbf-b521-cc2f96461318.lovable.app-1780460955099.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5a70531e-adf0-467e-ba73-9847f6aba990/id-preview-315e071c--226ba5ee-72f4-4cbf-b521-cc2f96461318.lovable.app-1780460955099.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
+      },
     ],
     scripts: [
       {
@@ -103,7 +146,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head><HeadContent /></head>
+      <head>
+        <HeadContent />
+      </head>
       <body>
         {children}
         <Scripts />

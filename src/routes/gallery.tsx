@@ -11,7 +11,11 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Before & After Results — SHS Belagavi" },
-      { name: "description", content: "Real patient transformations from SHS — acne, pigmentation, hair loss and scar treatments. Drag to compare." },
+      {
+        name: "description",
+        content:
+          "Real patient transformations from SHS — acne, pigmentation, hair loss and scar treatments. Drag to compare.",
+      },
       { property: "og:title", content: "Before & After Gallery — SHS" },
       { property: "og:description", content: "Real patient transformations." },
       { property: "og:url", content: "/gallery" },
@@ -42,7 +46,11 @@ function Gallery() {
     <>
       <PageHero
         eyebrow="Real Results"
-        title={<>Transformations, <em className="text-primary not-italic">honestly shown.</em></>}
+        title={
+          <>
+            Transformations, <em className="text-primary not-italic">honestly shown.</em>
+          </>
+        }
         lede="Every result is from a real patient on a real protocol. Drag the slider to compare."
       />
       <section className="bg-background py-24">
@@ -64,7 +72,9 @@ function Gallery() {
                 <BeforeAfter before={i.before} after={i.after} label={i.cat} />
                 <figcaption className="mt-3 flex items-center justify-between text-sm">
                   <span className="font-medium">{i.l}</span>
-                  <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{i.cat}</span>
+                  <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    {i.cat}
+                  </span>
                 </figcaption>
               </figure>
             ))}

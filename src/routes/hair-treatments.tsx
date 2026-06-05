@@ -43,23 +43,23 @@ function Hair() {
       </PageHero>
 
       <section className="bg-background py-24">
-        <div className="container-x grid gap-14 lg:grid-cols-12 lg:items-start">
-          <div className="lg:col-span-5">
-            <img src={hair} alt="Healthy hair after trichology treatment" width={1200} height={1500} className="aspect-[4/5] w-full rounded-3xl object-cover" loading="lazy" />
-          </div>
-          <div className="lg:col-span-7">
-            <p className="eyebrow">Our Hair Services</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl">Built around evidence, delivered with care.</h2>
-            <div className="mt-10 grid gap-px overflow-hidden rounded-2xl bg-foreground/10 sm:grid-cols-2">
-              {SERVICES.map((s, i) => (
-                <article key={s.t} className="group bg-card p-7">
+        <div className="container-x">
+          <p className="eyebrow">Our Hair Services</p>
+          <h2 className="mt-4 max-w-2xl font-display text-4xl md:text-5xl">Built around evidence, delivered with care.</h2>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((s, i) => (
+              <article key={s.t} className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                  <img src={hair} alt={s.t} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
                   <span className="text-xs text-muted-foreground">0{i + 1}</span>
-                  <h3 className="mt-6 font-display text-xl">{s.t}</h3>
+                  <h3 className="mt-3 font-display text-xl">{s.t}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
-                  <Link to="/contact" className="mt-5 inline-flex items-center gap-1 text-xs font-medium uppercase tracking-[0.2em] text-primary">Enquire <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></Link>
-                </article>
-              ))}
-            </div>
+                  <Link to="/contact" className="mt-6 inline-flex items-center gap-1 text-xs font-medium uppercase tracking-[0.2em] text-primary">Enquire <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

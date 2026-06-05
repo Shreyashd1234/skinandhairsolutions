@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { ArrowUpRight } from "lucide-react";
 import hero from "@/assets/hero-skin.jpg";
+import clinic from "@/assets/clinic-interior.jpg";
+import laser from "@/assets/laser-tech.jpg";
+import pharma from "@/assets/pharma-products.jpg";
 
 export const Route = createFileRoute("/skin-treatments")({
   head: () => ({

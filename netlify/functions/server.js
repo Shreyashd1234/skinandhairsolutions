@@ -1,12 +1,7 @@
-import { createRequire } from "module";
-import { fileURLToPath } from "url";
-import { dirname, resolve } from "path";
+import { resolve, dirname } from "path";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// Dynamically resolve server entry relative to this file
-const serverPath = resolve(__dirname, "../../dist/server/server.js");
+// esbuild injects __filename/__dirname for ESM — use them directly
+const serverPath = resolve(dirname(__filename), "../../dist/server/server.js");
 
 let handler;
 async function getHandler() {

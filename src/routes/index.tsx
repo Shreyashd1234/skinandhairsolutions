@@ -91,10 +91,9 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="absolute -left-8 -bottom-8 hidden rounded-2xl bg-card p-5 shadow-2xl ring-1 ring-black/5 md:block">
-              <p className="font-display text-3xl text-primary"><Counter value={98} suffix="%" /></p>
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Patient Satisfaction</p>
-            </div>
+          </div>
+        </div>
+      </section>
           </div>
         </div>
       </section>

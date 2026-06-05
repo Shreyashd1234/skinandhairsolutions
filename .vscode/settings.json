@@ -1,0 +1,23 @@
+{
+  // Disable VS Code's built-in CSS validator — it doesn't understand
+  // Tailwind v4 syntax (@source, @custom-variant, @theme, @apply, etc.)
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+
+  // Tell the Tailwind IntelliSense extension to treat this file as Tailwind CSS
+  "tailwindCSS.includeLanguages": {
+    "css": "css"
+  },
+
+  // Suppress "Unknown at rule" warnings for Tailwind directives
+  "css.customData": [],
+
+  // Let the Tailwind extension provide completions and validation
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  // Files that should trigger Tailwind IntelliSense
+  "tailwindCSS.experimental.classRegex": []
+}

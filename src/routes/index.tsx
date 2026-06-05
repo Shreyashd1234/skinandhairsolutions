@@ -94,9 +94,6 @@ function Home() {
           </div>
         </div>
       </section>
-          </div>
-        </div>
-      </section>
 
       {/* TRUST COUNTERS */}
       <section className="bg-background py-20">

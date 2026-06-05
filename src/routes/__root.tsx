@@ -15,6 +15,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { StickyCTAs } from "@/components/site/StickyCTAs";
 import { Toaster } from "@/components/ui/sonner";
+import { MobileBottomBar } from "@/components/site/MobileBottomBar";
 
 function NotFoundComponent() {
   return (
@@ -69,6 +70,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" },
     ],
     scripts: [
       {
@@ -115,12 +117,12 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SiteHeader />
-      <main>
+      <main className="pb-20 lg:pb-0">
         <Outlet />
       </main>
       <SiteFooter />
       <StickyCTAs />
-      <StickyCTAs />
+      <MobileBottomBar />
       <Toaster />
     </QueryClientProvider>
   );

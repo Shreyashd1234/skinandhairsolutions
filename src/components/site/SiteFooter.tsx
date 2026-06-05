@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Youtube, MapPin, Phone, Mail } from "lucide-react";
-import logoAsset from "@/assets/shs-logo.svg.asset.json";
 
 export function SiteFooter() {
   return (
@@ -8,12 +7,9 @@ export function SiteFooter() {
       <div className="container-x py-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3">
-              <img src={logoAsset.url} alt="SHS" className="h-12 w-auto invert" width={48} height={48} />
-              <div>
-                <div className="font-display text-xl">Skin & Hair Solutions</div>
-                <div className="text-[10px] uppercase tracking-[0.3em] text-background/60">Belagavi</div>
-              </div>
+            <div>
+              <div className="font-display text-2xl">Skin & Hair Solutions</div>
+              <div className="mt-1 text-[10px] uppercase tracking-[0.3em] text-background/60">Belagavi</div>
             </div>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-background/70">
               North Karnataka's premium destination for dermatology, trichology and aesthetic medicine —

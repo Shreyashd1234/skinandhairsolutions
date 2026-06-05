@@ -1,7 +1,7 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
 
+@source "../src";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -88,7 +88,9 @@
     letter-spacing: -0.01em;
     color: var(--color-foreground);
   }
-  ::selection { background: color-mix(in oklab, var(--burgundy) 25%, transparent); }
+  ::selection {
+    background: oklch(from var(--burgundy) l c h / 0.25);
+  }
 }
 
 @layer utilities {
@@ -99,7 +101,8 @@
   }
   .eyebrow::before {
     content: "";
-    width: 24px; height: 1px;
+    width: 24px;
+    height: 1px;
     background: currentColor;
     display: inline-block;
   }
@@ -108,13 +111,16 @@
     height: 1px;
   }
   .glass {
-    background: color-mix(in oklab, white 70%, transparent);
+    background: oklch(1 0 0 / 0.7);
     backdrop-filter: blur(14px) saturate(140%);
     -webkit-backdrop-filter: blur(14px) saturate(140%);
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-[var(--wine)] hover:shadow-[0_10px_40px_-12px_color-mix(in_oklab,var(--burgundy)_55%,transparent)] active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-[var(--wine)] active:scale-[0.98];
     min-height: 44px;
+    &:hover {
+      box-shadow: 0 10px 40px -12px oklch(from var(--burgundy) l c h / 0.55);
+    }
   }
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-transparent px-6 py-3.5 text-sm font-medium text-foreground transition-all hover:border-foreground hover:bg-foreground hover:text-background;

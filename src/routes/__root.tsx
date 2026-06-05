@@ -120,6 +120,8 @@ function RootComponent() {
       </main>
       <SiteFooter />
       <StickyCTAs />
+      <StickyCTAs />
+      <Toaster />
     </QueryClientProvider>
   );
 }

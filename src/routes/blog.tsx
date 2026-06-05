@@ -28,7 +28,7 @@ function Blog() {
   return (
     <>
       <PageHero
-        eyebrow="The Journal"
+        eyebrow="Blog"
         title={<>Considered writing on <em className="text-primary not-italic">skin & hair.</em></>}
         lede="Expert-written, evidence-based guidance from the specialists at SHS."
       />

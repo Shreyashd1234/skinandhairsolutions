@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" fill="none">
+  <!-- Circle background -->
+  <circle cx="22" cy="22" r="21" fill="oklch(0.38 0.16 354)" />
+  <!-- Stylized S mark -->
+  <text x="22" y="28" font-family="Georgia, serif" font-size="18" font-weight="700" fill="oklch(0.74 0.08 80)" text-anchor="middle" letter-spacing="-1">SHS</text>
+  <!-- Gold accent line -->
+  <line x1="9" y1="33" x2="35" y2="33" stroke="oklch(0.74 0.08 80)" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+</svg>

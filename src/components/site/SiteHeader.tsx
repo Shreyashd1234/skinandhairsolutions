@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/shs-logo.svg.asset.json";
+import logoUrl from "@/assets/shs-logo.png?url";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -33,20 +33,13 @@ export function SiteHeader() {
       }`}
     >
       <div className="container-x flex items-center justify-between gap-6">
-        <Link to="/" className="flex items-center gap-3" aria-label="Skin & Hair Solutions home">
+        <Link to="/" className="flex items-center" aria-label="Skin & Hair Solutions home">
           <img
-            src={logoAsset.url}
-            alt="SHS"
-            className="h-10 w-auto md:h-11"
-            width={44}
-            height={44}
+            src={logoUrl}
+            alt="Skin & Hair Solutions"
+            className="h-12 w-auto md:h-14"
+            height={56}
           />
-          <span className="hidden flex-col leading-tight md:flex">
-            <span className="font-display text-base text-primary">Skin & Hair Solutions</span>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Belagavi
-            </span>
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">

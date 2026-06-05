@@ -28,12 +28,12 @@ export const Route = createFileRoute("/")({
 });
 
 const SERVICES = [
-  { title: "Skin Care", desc: "Acne, pigmentation, melasma & medical dermatology.", to: "/skin-treatments" },
-  { title: "Hair Care", desc: "Hair fall, PRP therapy, regrowth & trichology.", to: "/hair-treatments" },
-  { title: "Laser Treatments", desc: "FDA-cleared lasers for hair, skin & rejuvenation.", to: "/aesthetic-treatments" },
-  { title: "Aesthetic Procedures", desc: "Skin tightening, peels and contouring.", to: "/aesthetic-treatments" },
-  { title: "Skin Rejuvenation", desc: "Hydrafacial, mesotherapy and glow protocols.", to: "/aesthetic-treatments" },
-  { title: "Anti-Aging", desc: "Botox, fillers & advanced rejuvenation.", to: "/aesthetic-treatments" },
+  { title: "Skin Care", desc: "Acne, pigmentation, melasma & medical dermatology.", to: "/skin-treatments", img: heroSkin },
+  { title: "Hair Care", desc: "Hair fall, PRP therapy, regrowth & trichology.", to: "/hair-treatments", img: hair },
+  { title: "Laser Treatments", desc: "FDA-cleared lasers for hair, skin & rejuvenation.", to: "/aesthetic-treatments", img: laser },
+  { title: "Aesthetic Procedures", desc: "Skin tightening, peels and contouring.", to: "/aesthetic-treatments", img: clinic },
+  { title: "Skin Rejuvenation", desc: "Hydrafacial, mesotherapy and glow protocols.", to: "/aesthetic-treatments", img: heroSkin },
+  { title: "Anti-Aging", desc: "Botox, fillers & advanced rejuvenation.", to: "/aesthetic-treatments", img: pharma },
 ] as const;
 
 const WHY = [
@@ -91,10 +91,6 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="absolute -left-8 -bottom-8 hidden rounded-2xl bg-card p-5 shadow-2xl ring-1 ring-black/5 md:block">
-              <p className="font-display text-3xl text-primary"><Counter value={98} suffix="%" /></p>
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Patient Satisfaction</p>
-            </div>
           </div>
         </div>
       </section>
@@ -129,13 +125,18 @@ function Home() {
             </div>
             <Link to="/skin-treatments" className="hidden link-underline text-sm font-medium text-primary md:inline-block">Explore all →</Link>
           </div>
-          <div className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-foreground/10 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
             {SERVICES.map((s, i) => (
-              <Link key={s.title} to={s.to} className="group relative flex flex-col bg-card p-8 transition-colors hover:bg-secondary">
-                <span className="text-xs text-muted-foreground">0{i + 1}</span>
-                <h3 className="mt-8 font-display text-2xl">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-                <ArrowUpRight className="mt-8 h-5 w-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <Link key={s.title} to={s.to} className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                  <img src={s.img} alt={s.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <span className="text-xs text-muted-foreground">0{i + 1}</span>
+                  <h3 className="mt-3 font-display text-2xl">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                  <ArrowUpRight className="mt-6 h-5 w-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
               </Link>
             ))}
           </div>

@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { ArrowUpRight } from "lucide-react";
 import hero from "@/assets/hero-skin.jpg";
+import clinic from "@/assets/clinic-interior.jpg";
+import laser from "@/assets/laser-tech.jpg";
+import pharma from "@/assets/pharma-products.jpg";
 
 export const Route = createFileRoute("/skin-treatments")({
   head: () => ({
@@ -20,14 +23,14 @@ export const Route = createFileRoute("/skin-treatments")({
 });
 
 const TREATMENTS = [
-  { t: "Acne Treatment", d: "Medical-grade protocols for active acne and post-acne marks." },
-  { t: "Pigmentation", d: "Advanced topical and laser therapies for uneven tone." },
-  { t: "Melasma", d: "Specialist multi-modal care for stubborn melasma." },
-  { t: "Psoriasis", d: "Long-term medical management and biologics." },
-  { t: "Eczema", d: "Calming, restoring protocols for sensitive skin." },
-  { t: "Vitiligo", d: "Phototherapy and surgical options for re-pigmentation." },
-  { t: "Scar Treatment", d: "Microneedling, lasers and fillers for visible scars." },
-  { t: "Skin Rejuvenation", d: "Hydrafacial, mesotherapy and glow protocols." },
+  { t: "Acne Treatment", d: "Medical-grade protocols for active acne and post-acne marks.", img: hero },
+  { t: "Pigmentation", d: "Advanced topical and laser therapies for uneven tone.", img: laser },
+  { t: "Melasma", d: "Specialist multi-modal care for stubborn melasma.", img: hero },
+  { t: "Psoriasis", d: "Long-term medical management and biologics.", img: clinic },
+  { t: "Eczema", d: "Calming, restoring protocols for sensitive skin.", img: pharma },
+  { t: "Vitiligo", d: "Phototherapy and surgical options for re-pigmentation.", img: laser },
+  { t: "Scar Treatment", d: "Microneedling, lasers and fillers for visible scars.", img: clinic },
+  { t: "Skin Rejuvenation", d: "Hydrafacial, mesotherapy and glow protocols.", img: hero },
 ];
 
 function Skin() {
@@ -46,15 +49,20 @@ function Skin() {
 
       <section className="bg-background py-24">
         <div className="container-x">
-          <div className="grid gap-px overflow-hidden rounded-3xl bg-foreground/10 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {TREATMENTS.map((t, i) => (
-              <article key={t.t} className="group flex flex-col bg-card p-8 transition-colors hover:bg-secondary">
-                <span className="text-xs text-muted-foreground">0{i + 1}</span>
-                <h2 className="mt-8 font-display text-2xl">{t.t}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t.d}</p>
-                <Link to="/contact" className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-primary">
-                  Enquire <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </Link>
+              <article key={t.t} className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                  <img src={t.img} alt={t.t} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="text-xs text-muted-foreground">0{i + 1}</span>
+                  <h2 className="mt-3 font-display text-xl">{t.t}</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.d}</p>
+                  <Link to="/contact" className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                    Enquire <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </Link>
+                </div>
               </article>
             ))}
           </div>

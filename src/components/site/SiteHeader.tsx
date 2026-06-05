@@ -11,7 +11,7 @@ const NAV = [
   { to: "/aesthetic-treatments", label: "Aesthetic" },
   { to: "/pharma", label: "Pharma" },
   { to: "/gallery", label: "Results" },
-  { to: "/blog", label: "Journal" },
+  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -42,7 +42,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
-          {NAV.slice(1, -1).map((n) => (
+          {NAV.slice(0, -1).map((n) => (
             <Link
               key={n.to}
               to={n.to}

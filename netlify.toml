@@ -1,26 +1,9 @@
 [build]
-  command = "npm run build"
+  command = "npm run build && node scripts/prerender.mjs"
   publish = "dist/client"
-  functions = "netlify/functions"
 
-[functions]
-  node_bundler = "esbuild"
-  included_files = ["dist/server/**"]
-
-# Serve pre-built static assets directly from dist/client
-[[redirects]]
-  from = "/assets/*"
-  to = "/assets/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/robots.txt"
-  to = "/robots.txt"
-  status = 200
-
-# All other routes → SSR function
-# Without force=true, Netlify serves existing files first, only falls through for unmatched paths
+# SPA fallback — all routes serve index.html, TanStack Router handles routing client-side
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/server"
+  to = "/index.html"
   status = 200

@@ -125,13 +125,18 @@ function Home() {
             </div>
             <Link to="/skin-treatments" className="hidden link-underline text-sm font-medium text-primary md:inline-block">Explore all →</Link>
           </div>
-          <div className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-foreground/10 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
             {SERVICES.map((s, i) => (
-              <Link key={s.title} to={s.to} className="group relative flex flex-col bg-card p-8 transition-colors hover:bg-secondary">
-                <span className="text-xs text-muted-foreground">0{i + 1}</span>
-                <h3 className="mt-8 font-display text-2xl">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-                <ArrowUpRight className="mt-8 h-5 w-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <Link key={s.title} to={s.to} className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                  <img src={s.img} alt={s.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <span className="text-xs text-muted-foreground">0{i + 1}</span>
+                  <h3 className="mt-3 font-display text-2xl">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                  <ArrowUpRight className="mt-6 h-5 w-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
               </Link>
             ))}
           </div>

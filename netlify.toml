@@ -7,8 +7,14 @@
   node_bundler = "esbuild"
   included_files = ["dist/server/**"]
 
+# Serve static assets directly (CSS, JS, images, fonts)
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+# All other routes → SSR function (no force, so existing files are served first)
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/server"
   status = 200
-  force = true

@@ -28,12 +28,12 @@ export const Route = createFileRoute("/")({
 });
 
 const SERVICES = [
-  { title: "Skin Care", desc: "Acne, pigmentation, melasma & medical dermatology.", to: "/skin-treatments" },
-  { title: "Hair Care", desc: "Hair fall, PRP therapy, regrowth & trichology.", to: "/hair-treatments" },
-  { title: "Laser Treatments", desc: "FDA-cleared lasers for hair, skin & rejuvenation.", to: "/aesthetic-treatments" },
-  { title: "Aesthetic Procedures", desc: "Skin tightening, peels and contouring.", to: "/aesthetic-treatments" },
-  { title: "Skin Rejuvenation", desc: "Hydrafacial, mesotherapy and glow protocols.", to: "/aesthetic-treatments" },
-  { title: "Anti-Aging", desc: "Botox, fillers & advanced rejuvenation.", to: "/aesthetic-treatments" },
+  { title: "Skin Care", desc: "Acne, pigmentation, melasma & medical dermatology.", to: "/skin-treatments", img: heroSkin },
+  { title: "Hair Care", desc: "Hair fall, PRP therapy, regrowth & trichology.", to: "/hair-treatments", img: hair },
+  { title: "Laser Treatments", desc: "FDA-cleared lasers for hair, skin & rejuvenation.", to: "/aesthetic-treatments", img: laser },
+  { title: "Aesthetic Procedures", desc: "Skin tightening, peels and contouring.", to: "/aesthetic-treatments", img: clinic },
+  { title: "Skin Rejuvenation", desc: "Hydrafacial, mesotherapy and glow protocols.", to: "/aesthetic-treatments", img: heroSkin },
+  { title: "Anti-Aging", desc: "Botox, fillers & advanced rejuvenation.", to: "/aesthetic-treatments", img: pharma },
 ] as const;
 
 const WHY = [

@@ -42,24 +42,24 @@ function Aesthetic() {
       </PageHero>
 
       <section className="bg-background py-24">
-        <div className="container-x grid gap-12 lg:grid-cols-12 lg:items-start">
-          <div className="lg:col-span-7">
-            <div className="grid gap-px overflow-hidden rounded-3xl bg-foreground/10 sm:grid-cols-2">
-              {PROCEDURES.map((p, i) => (
-                <article key={p.t} className="bg-card p-8">
+        <div className="container-x">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {PROCEDURES.map((p, i) => (
+              <article key={p.t} className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-foreground/5 transition-shadow hover:shadow-xl">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                  <img src={laser} alt={p.t} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
                   <span className="text-xs text-muted-foreground">0{i + 1}</span>
-                  <h2 className="mt-6 font-display text-xl">{p.t}</h2>
+                  <h2 className="mt-3 font-display text-xl">{p.t}</h2>
                   <p className="mt-2 text-sm text-muted-foreground">{p.d}</p>
-                </article>
-              ))}
-            </div>
+                </div>
+              </article>
+            ))}
           </div>
-          <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <img src={laser} alt="Aesthetic laser device" width={1200} height={1400} className="aspect-[4/5] w-full rounded-3xl object-cover" loading="lazy" />
-            <div className="mt-6 rounded-2xl bg-secondary p-6">
-              <p className="font-display text-2xl">Safe for Indian skin.</p>
-              <p className="mt-2 text-sm text-muted-foreground">Our protocols are selected and calibrated specifically for South Asian skin types.</p>
-            </div>
+          <div className="mt-12 rounded-2xl bg-secondary p-6">
+            <p className="font-display text-2xl">Safe for Indian skin.</p>
+            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Our protocols are selected and calibrated specifically for South Asian skin types.</p>
           </div>
         </div>
       </section>
